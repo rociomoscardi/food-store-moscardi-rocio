@@ -121,7 +121,6 @@ section#catalogo {
     flex: 1;
     padding: 2rem;
     overflow-x: auto;
-    max-width: calc(100vw - 13rem);
 }
 
 /* ===== BUSCADOR ===== */
