@@ -67,6 +67,8 @@ aside#categorias-container h2 {
     letter-spacing: 0.1em;
     color: #888;
     margin-bottom: 1rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
 }
 
 #lista-categorias {
@@ -143,7 +145,8 @@ section#catalogo {
 
 .producto-card h3 {
     font-size: 1rem;
-    font-weight: 600;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
 }
 
 .producto-card p {
@@ -278,4 +281,6 @@ main.carrito-main h2 {
     color: #1a2e2e;
     font-size: 0.95rem;
     white-space: nowrap;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
 }
