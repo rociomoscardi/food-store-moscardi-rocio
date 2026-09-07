@@ -31,7 +31,7 @@ function renderProductos(productos: Product[]): void {
       <h3>${producto.nombre}</h3>
       <p>${producto.descripcion}</p>
       <p><strong>$${producto.precio.toLocaleString("es-AR")}</strong></p>
-      <p>${producto.disponible ? "✅ Disponible" : "❌ Sin stock"}</p>
+      <p>${producto.disponible ? "Disponible" : "Sin stock"}</p>
       <button type="button" class="btn-agregar" ${!producto.disponible ? "disabled" : ""}>
         Agregar al carrito
       </button>
