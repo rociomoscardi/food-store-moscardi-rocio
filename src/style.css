@@ -62,7 +62,7 @@ header nav a:hover {
     margin-left: 0.25rem;
 }
 
-/* ===== LAYOUT HOME ===== */
+/* ===== LAYOUT GENERAL ===== */
 main {
     display: flex;
     min-height: calc(100vh - 4rem);
@@ -152,11 +152,11 @@ section#catalogo {
 .producto-card {
     background: white;
     border-radius: 0.75rem;
-    padding: 1.25rem;
+    padding: 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    overflow: hidden;
 }
 
 .producto-card h3 {
@@ -170,101 +170,12 @@ section#catalogo {
     color: #666;
 }
 
-.producto-card strong {
-    font-size: 1rem;
-    color: #1a2e2e;
-}
-
-.btn-agregar {
-    margin-top: auto;
-    background-color: #1a2e2e;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.4rem;
-    cursor: pointer;
-    font-size: 0.80rem;
-    transition: background-color 0.2s;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-right: 0.25rem;
-}
-
-.btn-agregar:hover:not(:disabled) {
-    background-color: #2d4f4f;
-}
-
-.btn-agregar:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-/* ===== CARRITO ===== */
-main.carrito-main {
-    flex-direction: column;
-    padding: 2rem;
-    max-width: 50rem;
-    margin: 0 auto;
-    width: 100%;
-}
-
-main.carrito-main h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.carrito-item {
-    background: white;
-    border-radius: 0.75rem;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-}
-
-.carrito-item h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-
-.carrito-item p {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-#total-container {
-    margin-top: 1rem;
-    text-align: right;
-}
-
-#total-container h3 {
-    font-size: 1.25rem;
-    color: #1a2e2e;
-}
-
-/* ===== MENSAJE VACÍO ===== */
-#productos-container p,
-#carrito-container p {
-    color: #888;
-    margin-bottom: 0.5rem;
-
-}
-
-/* ===== IMAGEN PRODUCTO ===== */
 .producto-img {
-    width: 90%;
-    margin-left: 0.5rem;
-    height: 13rem;
-    object-fit: cover;
+    width: 100%;
+    height: 13rem; 
+    object-fit: contain;
     border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.producto-card {
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    background-color: white;
 }
 
 .producto-info {
@@ -273,8 +184,8 @@ main.carrito-main h2 {
     flex-direction: column;
     gap: 0.4rem;
     flex: 1;
-    min-height: 12rem;
     justify-content: space-between;
+    min-height: 10rem;
 }
 
 .producto-categoria {
@@ -301,8 +212,31 @@ main.carrito-main h2 {
     font-weight: 700;
 }
 
-/* ===== CARRITO LAYOUT ===== */
+.btn-agregar {
+    background-color: #1a2e2e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 0.80rem;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-agregar:hover:not(:disabled) {
+    background-color: #2d4f4f;
+}
+
+.btn-agregar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ===== CARRITO MAIN ===== */
 .carrito-main {
+    flex-direction: column;
     padding: 2rem;
     max-width: 75rem;
     margin: 0 auto;
@@ -312,12 +246,12 @@ main.carrito-main h2 {
 .carrito-main h2 {
     font-family: 'Syne', sans-serif;
     font-size: 1.75rem;
+    font-weight: 800;
     margin-bottom: 1.5rem;
-    text-align: center;
+    text-align: left;
 }
 
 .carrito-layout {
-    display: flex;
     gap: 2rem;
     align-items: flex-start;
 }
@@ -328,6 +262,9 @@ main.carrito-main h2 {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .carrito-item {
@@ -468,7 +405,6 @@ main.carrito-main h2 {
 
 /* ===== CARRITO VACÍO ===== */
 .carrito-vacio {
-    background: white;
     border-radius: 0.75rem;
     padding: 3rem;
     text-align: center;
@@ -476,7 +412,8 @@ main.carrito-main h2 {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    margin: 0 auto;
+    width: 40rem;
 }
 
 .carrito-vacio-icono {
@@ -484,20 +421,30 @@ main.carrito-main h2 {
 }
 
 .carrito-vacio p {
-    color: #888;
     font-size: 0.95rem;
+    color: #1a1a1a;
 }
 
 .btn-ver-catalogo {
     background: #1a2e2e;
     color: white;
-    padding: 0.75rem 2rem;
+    padding: 0.60rem 2rem;
     border-radius: 0.4rem;
     text-decoration: none;
     font-size: 0.95rem;
+    font-weight: 600;
     margin-top: 0.5rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .btn-ver-catalogo:hover {
     background: #2d4f4f;
+}
+
+/* ===== MENSAJE SIN RESULTADOS ===== */
+#productos-container p {
+    color: #888;
 }
