@@ -53,9 +53,11 @@ function renderProductos(productos: Product[]): void {
     btnAgregar.addEventListener("click", () => {
       addToCart(producto);
       actualizarContadorCarrito();
-      btnAgregar.textContent = "¡Agregado!";
+      btnAgregar.textContent = "✓ Agregado";
+      btnAgregar.style.backgroundColor = "#c17f24";
       setTimeout(() => {
         btnAgregar.textContent = "+ Agregar";
+        btnAgregar.style.backgroundColor = "";
       }, 1500);
     });
 
