@@ -30,9 +30,11 @@ function renderCarritoVacio(): void {
     </div>
   `;
     resumenContainer.innerHTML = "";
+    resumenContainer.style.display = "none";
 }
 
 function renderResumen(items: ICartItem[]): void {
+    resumenContainer.style.display = "block";
     const total = calculateTotal(items);
     resumenContainer.innerHTML = `
     <div class="resumen-card">
@@ -72,18 +74,20 @@ function renderCarrito(): void {
         const div = document.createElement("div");
         div.classList.add("carrito-item");
         div.innerHTML = `
-        <img src="/pizza.jpg" alt="${item.product.nombre}" class="carrito-item-img" />
-        <div class="carrito-item-info">
-        <p class="carrito-item-nombre">${item.product.nombre}</p>
-        <p class="carrito-item-categoria">${item.product.categorias[0]?.nombre ?? ""}</p>
-        <p class="carrito-item-subtotal">Subtotal: $${(item.product.precio * item.cantidad).toLocaleString("es-AR")}</p>
-        </div>
-        <div class="carrito-item-controles">
+    <img src="/pizza.jpg" alt="${item.product.nombre}" class="carrito-item-img" />
+    <div class="carrito-item-info">
+    <p class="carrito-item-nombre">${item.product.nombre}</p>
+    <p class="carrito-item-categoria">${item.product.categorias[0]?.nombre ?? ""}</p>
+    <p class="carrito-item-subtotal">Subtotal: $${(item.product.precio * item.cantidad).toLocaleString("es-AR")}</p>
+    </div>
+    <div class="carrito-item-controles-wrapper">
+    <div class="carrito-item-controles">
         <button type="button" class="btn-cantidad" data-id="${item.product.id}" data-accion="restar">−</button>
         <span>${item.cantidad}</span>
         <button type="button" class="btn-cantidad" data-id="${item.product.id}" data-accion="sumar">+</button>
-        </div>
-        <button type="button" class="btn-eliminar" data-id="${item.product.id}">Eliminar</button>
+    </div>
+    <button type="button" class="btn-eliminar" data-id="${item.product.id}">Eliminar</button>
+    </div>
     `;
         carritoContainer.appendChild(div);
     });
