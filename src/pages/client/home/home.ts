@@ -1,7 +1,7 @@
 import { PRODUCTS, getCategories } from "../../../data/data";
 import { addToCart } from "../../../utils/cart";
-import type { IProduct } from "../../../types/product";
-import type { ICategory } from "../../../types/categoria";
+import type { Product } from "../../../types/product";
+import type { ICategory } from "../../../types/category";
 
 const productosContainer = document.getElementById(
   "productos-container"
@@ -16,12 +16,11 @@ const inputBusqueda = document.getElementById(
 let categoriaSeleccionada: number | null = null;
 let textoBusqueda: string = "";
 
-function renderProductos(productos: IProduct[]): void {
+function renderProductos(productos: Product[]): void {
   productosContainer.innerHTML = "";
 
   if (productos.length === 0) {
-    productosContainer.innerHTML =
-      "<p>No se encontraron productos.</p>";
+    productosContainer.innerHTML = "<p>No se encontraron productos.</p>";
     return;
   }
 
@@ -100,7 +99,6 @@ function aplicarFiltros(): void {
   renderProductos(productos);
 }
 
-// Inicialización
 renderCategorias(getCategories());
 renderProductos(PRODUCTS);
 

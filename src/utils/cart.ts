@@ -1,5 +1,4 @@
-import type { ICartItem } from "../types/product";
-import type { IProduct } from "../types/product";
+import type { ICartItem, Product } from "../types/product";
 
 const CART_KEY = "cart";
 
@@ -12,7 +11,7 @@ export function saveCartItems(items: ICartItem[]): void {
     localStorage.setItem(CART_KEY, JSON.stringify(items));
 }
 
-export function addToCart(product: IProduct): void {
+export function addToCart(product: Product): void {
     const items = getCartItems();
     const existing = items.find((item) => item.product.id === product.id);
 

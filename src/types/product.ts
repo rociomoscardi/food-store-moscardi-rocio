@@ -1,6 +1,6 @@
-import type { ICategory } from "./categoria";
+import type { ICategory } from "./category";
 
-export interface IProduct {
+export interface Product {
     id: number;
     eliminado: boolean;
     createdAt: string;
@@ -14,6 +14,6 @@ export interface IProduct {
 }
 
 export interface ICartItem {
-    product: IProduct;
+    product: Product;
     cantidad: number;
 }

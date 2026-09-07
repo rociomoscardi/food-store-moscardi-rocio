@@ -1,3 +1,4 @@
+import { Rol } from "../../../types/Rol";
 import { checkAuhtUser, logout } from "../../../utils/auth";
 
 const buttonLogout = document.getElementById(
@@ -13,7 +14,7 @@ const initPage = () => {
   checkAuhtUser(
     "/src/pages/auth/login/login.html",
     "/src/pages/client/home/home.html",
-    "admin"
+    Rol.admin
   );
 };
 initPage();
