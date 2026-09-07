@@ -162,13 +162,13 @@ section#catalogo {
     flex-direction: column;
     overflow: hidden;
     width: 14rem;
+    height: 26rem;
 }
 
 .producto-card h3 {
     font-size: 1rem;
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    height: 2.5rem;
 }
 
 .producto-card p {
@@ -190,7 +190,7 @@ section#catalogo {
     flex-direction: column;
     gap: 0.4rem;
     flex: 1;
-    min-height: 10rem;
+    justify-content: space-between; 
 }
 
 .producto-categoria {
