@@ -35,7 +35,7 @@ function renderProductos(productos: Product[]): void {
     const card = document.createElement("article");
     card.classList.add("producto-card");
     card.innerHTML = `
-      <img src="/pizza.jpg" alt="${producto.nombre}" class="producto-img" />
+      <img src="/${producto.imagen}" alt="${producto.nombre}" class="producto-img" />
       <div class="producto-info">
         <span class="producto-categoria">${producto.categorias[0]?.nombre ?? ""}</span>
         <h3>${producto.nombre}</h3>

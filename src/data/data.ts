@@ -165,7 +165,7 @@ export const PRODUCTS: Product[] = [
     precio: 3500.0,
     descripcion: "Torta rogel tradicional con dulce de leche y merengue",
     stock: 12,
-    imagen: "torta-rogel.jpg",
+    imagen: "torta.jpg",
     disponible: true,
     categorias: [categorias[3]],
   },
