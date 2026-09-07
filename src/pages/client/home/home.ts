@@ -1,5 +1,5 @@
 import { PRODUCTS, getCategories } from "../../../data/data";
-import { addToCart } from "../../../utils/cart";
+import { addToCart, getCartItems } from "../../../utils/cart";
 import type { Product } from "../../../types/product";
 import type { ICategory } from "../../../types/category";
 
@@ -15,6 +15,13 @@ const inputBusqueda = document.getElementById(
 
 let categoriaSeleccionada: number | null = null;
 let textoBusqueda: string = "";
+
+function actualizarContadorCarrito(): void {
+  const count = document.getElementById("cart-count") as HTMLSpanElement;
+  const items = getCartItems();
+  const total = items.reduce((acc, item) => acc + item.cantidad, 0);
+  count.textContent = String(total);
+}
 
 function renderProductos(productos: Product[]): void {
   productosContainer.innerHTML = "";
@@ -45,6 +52,7 @@ function renderProductos(productos: Product[]): void {
     const btnAgregar = card.querySelector(".btn-agregar") as HTMLButtonElement;
     btnAgregar.addEventListener("click", () => {
       addToCart(producto);
+      actualizarContadorCarrito();
       btnAgregar.textContent = "¡Agregado!";
       setTimeout(() => {
         btnAgregar.textContent = "+ Agregar";
@@ -106,6 +114,7 @@ function aplicarFiltros(): void {
 
 renderCategorias(getCategories());
 renderProductos(PRODUCTS);
+actualizarContadorCarrito();
 
 inputBusqueda.addEventListener("input", (e) => {
   textoBusqueda = (e.target as HTMLInputElement).value;
