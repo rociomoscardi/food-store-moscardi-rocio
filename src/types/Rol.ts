@@ -1,1 +1,4 @@
-export type Rol = "client" | "admin";
+export enum Rol {
+    admin = "admin",
+    client = "client"
+}
