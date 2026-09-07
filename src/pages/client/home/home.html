@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Store - Catálogo</title>
+    <link rel="stylesheet" href="/src/style.css" />
 </head>
 
 <body>
-    <h1>Hola desde el cliente</h1>
-    <button id="logoutButton">Logout</button>
+    <header>
+        <h1>Food Store</h1>
+        <nav>
+            <a href="/index.html">Inicio</a>
+            <a href="/src/pages/client/cart/cart.html">🛒 Carrito</a>
+        </nav>
+    </header>
+
+    <main>
+        <aside id="categorias-container">
+            <h2>Categorías</h2>
+            <ul id="lista-categorias"></ul>
+        </aside>
+
+        <section id="catalogo">
+            <div id="busqueda-container">
+                <input type="text" id="input-busqueda" placeholder="Buscar productos..." />
+            </div>
+            <div id="productos-container"></div>
+        </section>
+    </main>
+
     <script type="module" src="./home.ts"></script>
 </body>
 
