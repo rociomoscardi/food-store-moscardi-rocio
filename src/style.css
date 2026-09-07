@@ -22,12 +22,13 @@ header {
 
 header h1 {
     color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 300;
 }
 
 header h1 span {
-    font-weight: 300;
+    font-weight: 800;
 }
 
 header nav {
@@ -125,7 +126,7 @@ section#catalogo {
 /* ===== GRID DE PRODUCTOS ===== */
 #productos-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    grid-template-columns: repeat(auto-fill, 14rem);
     gap: 1.5rem;
 }
 
@@ -163,8 +164,11 @@ section#catalogo {
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.80rem;
     transition: background-color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 0.25rem;
 }
 
 .btn-agregar:hover:not(:disabled) {
@@ -224,5 +228,54 @@ main.carrito-main h2 {
 #productos-container p,
 #carrito-container p {
     color: #888;
-    
+    margin-bottom: 0.5rem;
+
+}
+
+/* ===== IMAGEN PRODUCTO ===== */
+.producto-img {
+    width: 90%;
+    margin-left: 0.5rem;
+    height: 13rem;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.producto-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+    min-height: 12rem;
+    justify-content: space-between;
+}
+
+.producto-categoria {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #c17f24;
+}
+
+.producto-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+}
+
+.producto-footer strong {
+    color: #1a2e2e;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }

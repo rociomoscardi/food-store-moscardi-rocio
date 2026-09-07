@@ -28,13 +28,18 @@ function renderProductos(productos: Product[]): void {
     const card = document.createElement("article");
     card.classList.add("producto-card");
     card.innerHTML = `
-      <h3>${producto.nombre}</h3>
-      <p>${producto.descripcion}</p>
-      <p><strong>$${producto.precio.toLocaleString("es-AR")}</strong></p>
-      <p>${producto.disponible ? "Disponible" : "Sin stock"}</p>
-      <button type="button" class="btn-agregar" ${!producto.disponible ? "disabled" : ""}>
-        Agregar al carrito
-      </button>
+      <img src="/pizza.jpg" alt="${producto.nombre}" class="producto-img" />
+      <div class="producto-info">
+        <span class="producto-categoria">${producto.categorias[0]?.nombre ?? ""}</span>
+        <h3>${producto.nombre}</h3>
+        <p>${producto.descripcion}</p>
+        <div class="producto-footer">
+          <strong>$${producto.precio.toLocaleString("es-AR")}</strong>
+          <button type="button" class="btn-agregar" ${!producto.disponible ? "disabled" : ""}>
+            + Agregar
+          </button>
+        </div>
+      </div>
     `;
 
     const btnAgregar = card.querySelector(".btn-agregar") as HTMLButtonElement;
@@ -42,7 +47,7 @@ function renderProductos(productos: Product[]): void {
       addToCart(producto);
       btnAgregar.textContent = "¡Agregado!";
       setTimeout(() => {
-        btnAgregar.textContent = "Agregar al carrito";
+        btnAgregar.textContent = "+ Agregar";
       }, 1500);
     });
 
