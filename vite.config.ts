@@ -5,7 +5,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        //d:aplicaion/dist/
+        // Registro de todas las páginas HTML del proyecto para incluirlas en el build.
+        // Sin este registro, Vite no las incluye y no se pueden navegar correctamente.
         index: resolve(__dirname, "index.html"),
         login: resolve(__dirname, "src/pages/auth/login/login.html"),
         registro: resolve(__dirname, "src/pages/auth/registro/registro.html"),
